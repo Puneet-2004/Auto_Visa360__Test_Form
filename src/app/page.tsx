@@ -1,5 +1,15 @@
-export default function Home() {
+import { auth, currentUser } from '@clerk/nextjs/server'
+
+export default async function Home() {
+  const { userId } = await auth()
+  if (!userId) {
+    return <div>Sign in to view this page</div>
+  }
+  const user = await currentUser()
   return (
-    <p>Hi</p>
+    
+    <div>
+      Welcome, {user.firstName}!
+    </div>
   );
 }
