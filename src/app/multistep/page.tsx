@@ -6,7 +6,7 @@ import { FieldDefinition } from '@/types/form';
 
 const formSteps: { fields: FieldDefinition[]; tableName: string }[] = [
   {
-    tableName: 'personal_info',
+    tableName: 'personal_info' ,
     fields: [
       { name: 'fullName', label: 'Full Name', type: 'text' },
       { name: 'email', label: 'Email', type: 'email' },
